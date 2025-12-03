@@ -1,0 +1,115 @@
+/* Light green background for all pages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    min-height: 100vh;
+    font-family: 'Courier New', monospace;
+    color: #1b5e20;
+}
+
+.navbar-container {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #00b33c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 200ms ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.back-btn:hover {
+    background: #007e2e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: #fff;
+}
+
+.page-content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.page-content h1 {
+    color: #0a7f0a;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 4px rgba(10, 127, 10, 0.3);
+}
+
+.page-content p {
+    color: #1b5e20;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Projects grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: linear-gradient(135deg, #f1f8f6 0%, #e8f5e9 100%);
+    padding: 24px;
+    border-radius: 8px;
+    border-left: 4px solid #00b33c;
+    transition: all 200ms ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-left-color: #0a7f0a;
+}
+
+.project-card h3 {
+    color: #0a7f0a;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.project-card p {
+    color: #1b5e20;
+    font-size: 1rem;
+}
+
+/* Contact info */
+.contact-info {
+    background: linear-gradient(135deg, #f1f8f6 0%, #e8f5e9 100%);
+    padding: 24px;
+    border-radius: 8px;
+    border-left: 4px solid #00b33c;
+    margin-top: 24px;
+}
+
+.contact-info p {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.contact-info strong {
+    color: #0a7f0a;
+}

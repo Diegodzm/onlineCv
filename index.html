@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DdzmPortfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DdzmPortfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles/main.css">
 </head>
 
 <body>
-   <!-- Matrix canvas (only visible on home/portfolio) -->
-   <canvas id="matrix-canvas" class="matrix-bg"></canvas>
-   
-   <!-- Portfolio title section (only visible on home) -->
-   <div class="portfolio-title" id="portfolio-section">
+  <!-- Matrix canvas (only visible on home/portfolio) -->
+  <canvas id="matrix-canvas" class="matrix-bg"></canvas>
+
+  <!-- Portfolio title section (only visible on home) -->
+  <div class="portfolio-title" id="portfolio-section">
     <h1>Diego Diaz Medina</h1>
     <p>Programming Portfolio<span class="typing-cursor"></span></p>
     <a class="download-cv" href="/docs/DiegoDiazM-espCV.pdf" download>Descarga CV</a>
@@ -24,11 +24,7 @@
 
   <!-- Navigation bar -->
   <ul class="nav flex-column" id="navbar">
-    <nav class="navbarbrand">
-  <a class="navbar-brand" href="#">
-    <img src="./docs/navicon.png" width="50" height="50" alt="">
-  </a>
-</nav>
+    <img class="navicon" src="./docs/navicon.png" width="25" height="25" alt="">
     <li class="nav-item">
       <a class="nav-link" href="#" data-section="portfolio">Home</a>
     </li>
@@ -41,6 +37,9 @@
     <li class="nav-item">
       <a class="nav-link" href="#" data-section="contact">Contact</a>
     </li>
+     <li class="nav-item">
+    </li>
+    
   </ul>
 
   <!-- Content sections -->
@@ -52,7 +51,9 @@
       </div>
       <div class="page-content">
         <h1>About Me</h1>
-        <p>I'm a creative developer with a passion for building beautiful and functional web applications. With experience in modern web technologies and a love for innovative design, I strive to create memorable digital experiences.</p>
+        <p>I'm a creative developer with a passion for building beautiful and functional web applications. With
+          experience in modern web technologies and a love for innovative design, I strive to create memorable digital
+          experiences.</p>
       </div>
     </div>
 
@@ -70,7 +71,8 @@
             </div>
             <div class="project-body">
               <h3>Project 1</h3>
-              <p>An amazing web application built with modern technologies. This project showcases responsive design and interactive features.</p>
+              <p>An amazing web application built with modern technologies. This project showcases responsive design and
+                interactive features.</p>
             </div>
             <div class="project-footer">
               <a href="#" class="project-btn">Go to Project</a>
@@ -83,7 +85,8 @@
             </div>
             <div class="project-body">
               <h3>Project 2</h3>
-              <p>An awesome full-stack application with database integration. Features include user authentication and real-time updates.</p>
+              <p>An awesome full-stack application with database integration. Features include user authentication and
+                real-time updates.</p>
             </div>
             <div class="project-footer">
               <a href="#" class="project-btn">Go to Project</a>
@@ -96,7 +99,8 @@
             </div>
             <div class="project-body">
               <h3>Project 3</h3>
-              <p>An incredible mobile-first project demonstrating advanced CSS and JavaScript. Includes animations and smooth transitions.</p>
+              <p>An incredible mobile-first project demonstrating advanced CSS and JavaScript. Includes animations and
+                smooth transitions.</p>
             </div>
             <div class="project-footer">
               <a href="#" class="project-btn">Go to Project</a>
@@ -114,7 +118,7 @@
       <div class="page-content">
         <h1>Contact Me</h1>
         <p>Get in touch! I'd love to hear from you.</p>
-        
+
         <form id="contactForm" class="contact-form" method="POST">
           <div class="form-group">
             <label for="name">Name</label>
@@ -161,10 +165,9 @@
 
 
 
-    <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>

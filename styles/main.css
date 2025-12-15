@@ -81,9 +81,9 @@ body.light-bg {
 .nav {
     opacity: 1;
     transition: all 0.3s ease-in-out;
-    background-color: rgb(15, 254, 47);
-    padding: 20px;
-    width: 85px;
+    background-color: rgb(3, 109, 17);
+    padding: 7px;
+    width: 40px;
     height: 100vh;
     position: fixed;
     left: 0;
@@ -91,6 +91,7 @@ body.light-bg {
     z-index: 2;
     border-right: 2px solid rgba(0, 255, 0, 0.853);
     overflow: hidden;
+  
 }
 
 .nav:hover {

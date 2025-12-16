@@ -54,6 +54,29 @@ body.light-bg {
     animation: blink 1s steps(1) infinite;
 }
 
+/* Language toggle button */
+.lang-toggle {
+    display: inline-block;
+    margin-top: 18px;
+    margin-bottom: 250px;
+    padding: 10px 16px;
+    background: #00b33c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 180ms ease, transform 120ms ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    z-index: 3;
+    pointer-events: auto;
+}
+
+.lang-toggle:hover {
+    background: #007e2e;
+    transform: translateY(-3px);
+}
+
 @keyframes blink {
     50% { opacity: 0; }
 }
@@ -155,7 +178,8 @@ body.light-bg {
 }
 
 .back-btn {
-    display: inline-block;
+    display: block;
+    margin: 0 auto;
     padding: 10px 16px;
     background: #00b33c;
     color: #fff;
@@ -164,6 +188,7 @@ body.light-bg {
     font-weight: 600;
     transition: all 200ms ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    width: fit-content;
 }
 
 .back-btn:hover {

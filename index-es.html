@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Ddzm</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <!-- Matrix canvas (only visible on home/portfolio) -->
+  <canvas id="matrix-canvas" class="matrix-bg"></canvas>
+  
+
+  <!-- Portfolio title section (only visible on home) -->
+  <div class="portfolio-title" id="portfolio-section">
+    <button class="lang-toggle" id="langToggle">English</button>
+    <h1>Diego Diaz Medina</h1>
+    <p>Portafolio de Programación<span class="typing-cursor"></span></p>
+    <a class="download-cv" href="/docs/DiegoDiazM-espCV.pdf" download>Descarga CV</a>
+    <a class="download-cv" href="./docs/DiegoDiazM-engCV.pdf" download>Download CV</a>
+  </div>
+
+  <!-- Navigation bar -->
+  <ul class="nav flex-column" id="navbar">
+    <img class="navicon" src="./docs/navicon.png" width="25" height="25" alt="">
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-section="portfolio">Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-section="about">Acerca de</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-section="projects">Proyectos</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" data-section="contact">Contacto</a>
+    </li>
+     <li class="nav-item">
+    </li>
+
+  </ul>
+
+  <!-- Content sections -->
+  <div class="page-container">
+    <!-- About section -->
+    <div class="page-section" id="about">
+      <div class="section-header">
+        <a href="#" class="back-btn" data-section="portfolio">← Volver al Portafolio</a>
+      </div>
+      <div class="page-content">
+        <h1>Acerca de Mí</h1>
+        <p>Soy un desarrollador creativo con pasión por construir aplicaciones web hermosas y funcionales. Con experiencia en tecnologías web modernas y amor por el diseño innovador, me esfuerzo por crear experiencias digitales memorables.</p>
+      </div>
+    </div>
+
+    <!-- Projects section -->
+    <div class="page-section" id="projects">
+      <div class="section-header">
+        <a href="#" class="back-btn" data-section="portfolio">← Volver al Portafolio</a>
+      </div>
+      <div class="page-content">
+        <h1>Proyectos</h1>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250?text=Proyecto+1" alt="Proyecto 1">
+            </div>
+            <div class="project-body">
+              <h3>Proyecto 1</h3>
+              <p>Una aplicación web increíble construida con tecnologías modernas. Este proyecto muestra diseño responsivo y características interactivas.</p>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-btn">Ir al Proyecto</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250?text=Proyecto+2" alt="Proyecto 2">
+            </div>
+            <div class="project-body">
+              <h3>Proyecto 2</h3>
+              <p>Una aplicación full-stack increíble con integración de base de datos. Incluye autenticación de usuarios y actualizaciones en tiempo real.</p>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-btn">Ir al Proyecto</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250?text=Proyecto+3" alt="Proyecto 3">
+            </div>
+            <div class="project-body">
+              <h3>Proyecto 3</h3>
+              <p>Un proyecto increíble centrado en móvil que demuestra CSS y JavaScript avanzados. Incluye animaciones y transiciones suaves.</p>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-btn">Ir al Proyecto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact section -->
+    <div class="page-section" id="contact">
+      <div class="section-header">
+        <a href="#" class="back-btn" data-section="portfolio">← Volver al Portafolio</a>
+      </div>
+      <div class="page-content">
+        <h1>Contactame</h1>
+        <p>¡Ponte en contacto! Me encantaría saber de ti.</p>
+
+        <form id="contactForm" class="contact-form" method="POST">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Enviar Mensaje</button>
+          <div id="formMessage" class="form-message"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="navigation.js"></script>
+  <script src="contact-handler.js"></script>
+  <script>
+    // Override typing text for Spanish version
+    (function() {
+        const h1 = document.querySelector('.portfolio-title h1');
+        const p = document.querySelector('.portfolio-title p');
+        if (!h1 || !p) return;
+
+        const h1Text = 'Diego Diaz Medina';
+        const pText = 'Portafolio de Programación';
+
+        // Update the typing animation text
+        const originalLoop = window.loop;
+        if (originalLoop) {
+            // Modify the existing animation
+            const h1Span = h1.querySelector('.typing-text');
+            const pSpan = p.querySelector('.typing-text');
+            if (h1Span && pSpan) {
+                // Simple text replacement for now
+                setTimeout(() => {
+                    h1Span.textContent = h1Text;
+                    pSpan.textContent = pText;
+                }, 100);
+            }
+        }
+    })();
+  </script>
+</body>
+
+</html>

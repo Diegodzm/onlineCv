@@ -4,100 +4,193 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// Matrix characters - mix of katakana and symbols
-const katakana = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
-const nums = '0123456789';
-const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const chars = katakana + nums + alphabet;
+// Space scene elements
+let stars = [];
+let planets = [];
+let sun = {};
 
-const fontSize = 16;
-const charHeight = 22;
+// Initialize stars
+function initStars() {
+    stars = [];
+    const numStars = Math.floor((canvas.width * canvas.height) / 8000); // Density based on screen size
 
-// Column data: single object array replaces 9 parallel arrays
-let columns = [];
-const percentWide = 0.12; // ~12% of columns will be wider
-const columnGap = 4; // pixels between columns to avoid overlap
-
-// Helper: get character count based on column width
-function getCharCount(isWide) {
-    return isWide ? (28 + Math.floor(Math.random() * 18)) : (18 + Math.floor(Math.random() * 12));
-}
-
-// Helper: generate random character array
-function generateCharArray(count) {
-    const arr = [];
-    for (let i = 0; i < count; i++) {
-        arr.push(chars[Math.floor(Math.random() * chars.length)]);
-    }
-    return arr;
-}
-
-function initColumns() {
-    const avgWidth = fontSize * (1 + percentWide * 0.2) + columnGap;
-    const numColumns = Math.floor(canvas.width / avgWidth) || 1;
-    columns = [];
-
-    let x = 0;
-    for (let i = 0; i < numColumns; i++) {
-        const isWide = Math.random() < percentWide;
-        const fontMul = (isWide ? 1.2 : 1.0) * (0.9 + Math.random() * 0.6);
-        const width = Math.round(fontSize * fontMul);
-        const charHeight_scaled = Math.max(14, Math.round(charHeight * (width / fontSize)));
-        const charCount = getCharCount(isWide);
-
-        columns.push({
-            drop: Math.random() * canvas.height,
-            speed: 0.2 + Math.random() * 0.6,
-            chars: generateCharArray(charCount),
-            x: x,
-            width: width,
-            charHeight: charHeight_scaled,
-            isWide: isWide,
-            updateProb: 0.01 + Math.random() * 0.08
+    for (let i = 0; i < numStars; i++) {
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 2 + 0.5,
+            brightness: Math.random(),
+            twinkleSpeed: 0.02 + Math.random() * 0.04,
+            twinkleOffset: Math.random() * Math.PI * 2
         });
-        x += width + columnGap;
     }
 }
 
-// initialize columns
-initColumns();
+// Initialize planets
+function initPlanets() {
+    planets = [];
+    const numPlanets = 3 + Math.floor(Math.random() * 3); // 3-5 planets
 
-function drawMatrixStacked() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
+    for (let i = 0; i < numPlanets; i++) {
+        const semiMajorAxis = 100 + i * 80 + Math.random() * 50; // Increasing distance
+        const eccentricity = 0.1 + Math.random() * 0.4; // 0.1 to 0.5
+        const angle = Math.random() * Math.PI * 2;
+        const angularSpeed = 0.005 + Math.random() * 0.01; // Slower for outer planets
+
+        planets.push({
+            semiMajorAxis: semiMajorAxis,
+            eccentricity: eccentricity,
+            angle: angle,
+            angularSpeed: angularSpeed,
+            x: 0, // Will be calculated
+            y: 0, // Will be calculated
+            radius: 20 + Math.random() * 40,
+            color: `hsl(${Math.random() * 360}, 70%, 50%)`,
+            rotation: 0,
+            rotationSpeed: (Math.random() - 0.5) * 0.02
+        });
+    }
+}
+
+// Initialize sun
+function initSun() {
+    sun = {
+        x: canvas.width * 0.1,
+        y: canvas.height * 0.2,
+        radius: 60,
+        glowRadius: 120,
+        color: '#FFD700',
+        glowColor: '#FFA500'
+    };
+}
+
+
+
+// Initialize space scene
+function initSpaceScene() {
+    initStars();
+    initPlanets();
+    initSun();
+}
+
+initSpaceScene();
+
+// Draw stars
+function drawStars() {
+    stars.forEach(star => {
+        const brightness = 0.3 + 0.7 * Math.sin(Date.now() * star.twinkleSpeed + star.twinkleOffset);
+        ctx.fillStyle = `rgba(255, 255, 255, ${brightness})`;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fill();
+    });
+}
+
+
+
+// Draw planets
+function drawPlanets() {
+    planets.forEach(planet => {
+        // Planet body
+        ctx.fillStyle = planet.color;
+        ctx.beginPath();
+        ctx.arc(planet.x, planet.y, planet.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Planet shadow/highlight
+        const gradient = ctx.createRadialGradient(
+            planet.x - planet.radius * 0.3, planet.y - planet.radius * 0.3, 0,
+            planet.x, planet.y, planet.radius
+        );
+        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.3)');
+        gradient.addColorStop(1, 'rgba(0, 0, 0, 0.2)');
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(planet.x, planet.y, planet.radius, 0, Math.PI * 2);
+        ctx.fill();
+    });
+}
+
+// Draw sun
+function drawSun() {
+    // Sun glow
+    const gradient = ctx.createRadialGradient(
+        sun.x, sun.y, 0,
+        sun.x, sun.y, sun.glowRadius
+    );
+    gradient.addColorStop(0, 'rgba(255, 215, 0, 0.8)');
+    gradient.addColorStop(0.5, 'rgba(255, 165, 0, 0.4)');
+    gradient.addColorStop(1, 'rgba(255, 165, 0, 0)');
+
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(sun.x, sun.y, sun.glowRadius, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Sun body
+    ctx.fillStyle = sun.color;
+    ctx.beginPath();
+    ctx.arc(sun.x, sun.y, sun.radius, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Sun rays (animated)
+    const time = Date.now() * 0.001;
+    for (let i = 0; i < 12; i++) {
+        const angle = (i / 12) * Math.PI * 2 + time;
+        const rayLength = sun.radius + 20 + Math.sin(time * 2 + i) * 10;
+        const rayWidth = 3;
+
+        ctx.strokeStyle = 'rgba(255, 215, 0, 0.6)';
+        ctx.lineWidth = rayWidth;
+        ctx.beginPath();
+        ctx.moveTo(
+            sun.x + Math.cos(angle) * sun.radius,
+            sun.y + Math.sin(angle) * sun.radius
+        );
+        ctx.lineTo(
+            sun.x + Math.cos(angle) * rayLength,
+            sun.y + Math.sin(angle) * rayLength
+        );
+        ctx.stroke();
+    }
+}
+
+// Update planet positions
+function updatePlanets() {
+    planets.forEach(planet => {
+        // Update orbital angle
+        planet.angle += planet.angularSpeed;
+
+        // Calculate elliptical orbit position
+        const a = planet.semiMajorAxis;
+        const e = planet.eccentricity;
+        const theta = planet.angle;
+
+        // Elliptical coordinates
+        const r = a * (1 - e * e) / (1 + e * Math.cos(theta));
+        planet.x = sun.x + r * Math.cos(theta);
+        planet.y = sun.y + r * Math.sin(theta);
+
+        planet.rotation += planet.rotationSpeed;
+    });
+}
+
+
+
+// Draw space scene
+function drawSpaceScene() {
+    // Clear canvas with space background
+    ctx.fillStyle = '#000011';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    for (let i = 0; i < columns.length; i++) {
-        const col = columns[i];
-
-        // occasionally update a random character in the column
-        if (Math.random() < col.updateProb) {
-            const idx = Math.floor(Math.random() * col.chars.length);
-            col.chars[idx] = chars[Math.floor(Math.random() * chars.length)];
-        }
-
-        for (let j = 0; j < col.chars.length; j++) {
-            const yPos = col.drop - j * col.charHeight;
-            const base = 1 - (j / col.chars.length);
-            const opacity = Math.max(0.08, base * 0.5);
-            const drawX = col.x + Math.floor(Math.max(0, (col.width - col.width) / 2));
-
-            ctx.fillStyle = `rgba(0,255,0,${opacity})`;
-            ctx.font = col.width + 'px monospace';
-            ctx.fillText(col.chars[j], drawX, yPos);
-        }
-
-        // Reset column when past bottom
-        if (col.drop - (col.chars.length * col.charHeight) > canvas.height) {
-            col.drop = -Math.random() * 200;
-            col.chars = generateCharArray(getCharCount(col.isWide));
-        }
-
-        col.drop += col.speed;
-    }
+    drawStars();
+    drawSun();
+    drawPlanets();
+    updatePlanets();
 }
 
 function animate() {
-    drawMatrixStacked();
+    drawSpaceScene();
     requestAnimationFrame(animate);
 }
 
@@ -107,7 +200,22 @@ animate();
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    initColumns();
+    initSpaceScene();
+});
+
+// Language toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', function() {
+            const currentPath = window.location.pathname;
+            if (currentPath.includes('index-es.html')) {
+                window.location.href = 'index.html';
+            } else {
+                window.location.href = 'index-es.html';
+            }
+        });
+    }
 });
 
 // Typing + deleting animation for portfolio title
@@ -116,10 +224,12 @@ window.addEventListener('resize', () => {
     const p = document.querySelector('.portfolio-title p');
     if (!h1 || !p) return;
 
-    const h1Text = 'Diego Diaz Medina';
-    const pText = 'Portfolio';
-    const typeSpeed = 220; // ms per char (slower)
-    const deleteSpeed = 120; // ms per char (slower)
+    // Check if we're on Spanish version
+    const isSpanish = window.location.pathname.includes('index-es.html');
+    const h1Text = isSpanish ? '¡Bienvenido!' : 'Welcome!';
+    const pText = isSpanish ? 'A mi Portafolio de Programación' : 'To my Programming Portfolio';
+    const typeSpeed = 100; // ms per char (slower)
+    const deleteSpeed = 150; // ms per char (slower)
     const pauseAfterType = 1500;
 
     // prepare text and cursor spans

@@ -11,22 +11,25 @@
 </head>
 
 <body>
-  <!-- Matrix canvas (only visible on home/portfolio) -->
   <canvas id="matrix-canvas" class="matrix-bg"></canvas>
-  
+  <button class="nav-toggle" id="navToggle" aria-label="Open navigation" title="Open navigation">☰</button>
+  <div class="lang-container">
+    <button id="langToggle" class="lang-toggle" aria-label="Toggle language" title="Change language">
+      <span class="lang-option" data-lang="es">Español</span><span class="lang-sep"> | </span><span class="lang-option"
+        data-lang="en">English</span>
+    </button>
+  </div>
 
-  <!-- Portfolio title section (only visible on home) -->
+
   <div class="portfolio-title" id="portfolio-section">
-    <button class="lang-toggle" id="langToggle">English</button>
     <h1>Diego Diaz Medina</h1>
     <p>Portafolio de Programación<span class="typing-cursor"></span></p>
     <a class="download-cv" href="/docs/DiegoDiazM-espCV.pdf" download>Descarga CV</a>
     <a class="download-cv" href="./docs/DiegoDiazM-engCV.pdf" download>Download CV</a>
   </div>
 
-  <!-- Navigation bar -->
   <ul class="nav flex-column" id="navbar">
-    <img class="navicon" src="./docs/navicon.png" width="25" height="25" alt="">
+    <img class="navicon" src="./docs/navicon.png" width="25" height="25" alt="Menu">
     <li class="nav-item">
       <a class="nav-link" href="#" data-section="portfolio">Inicio</a>
     </li>
@@ -39,12 +42,11 @@
     <li class="nav-item">
       <a class="nav-link" href="#" data-section="contact">Contacto</a>
     </li>
-     <li class="nav-item">
+    <li class="nav-item">
     </li>
 
   </ul>
 
-  <!-- Content sections -->
   <div class="page-container">
     <!-- About section -->
     <div class="page-section" id="about">
@@ -53,7 +55,12 @@
       </div>
       <div class="page-content">
         <h1>Acerca de Mí</h1>
-        <p>Soy un desarrollador creativo con pasión por construir aplicaciones web hermosas y funcionales. Con experiencia en tecnologías web modernas y amor por el diseño innovador, me esfuerzo por crear experiencias digitales memorables.</p>
+        <p>Programador full stack con estudios en el area de la ingenieria industrial y bootcamp de programacion.
+          autodidacta y entusiasta de la tecnologia con muchas ganas de integrarme en el mundo de la programación.
+          
+        </br>Disfruto de aprender tecnologias y como poder traer mis proyectos a la realidad,soy alguien
+          responsable,proactivo,orientado al trabajo en equipo
+          y logro de objetivos </p>
       </div>
     </div>
 
@@ -67,27 +74,28 @@
         <div class="projects-grid">
           <div class="project-card">
             <div class="project-image">
-              <img src="https://via.placeholder.com/400x250?text=Proyecto+1" alt="Proyecto 1">
+              <img src="./docs/proyectos/todolist.jpg" alt="Lista de tareas">
             </div>
             <div class="project-body">
-              <h3>Proyecto 1</h3>
-              <p>Una aplicación web increíble construida con tecnologías modernas. Este proyecto muestra diseño responsivo y características interactivas.</p>
+              <h3>Lista de Tareas</h3>
+              <p>Aplicación de lista de tareas simple creada con React. Permite añadir, marcar y eliminar tareas.</p>
             </div>
             <div class="project-footer">
-              <a href="#" class="project-btn">Ir al Proyecto</a>
+              <a href="https://diegodzm.github.io/Todolist-react/" target="_blank" class="project-btn">Ir al
+                Proyecto</a>
             </div>
           </div>
 
           <div class="project-card">
             <div class="project-image">
-              <img src="https://via.placeholder.com/400x250?text=Proyecto+2" alt="Proyecto 2">
+              <img src="./docs/proyectos/restfulapi.jpg" alt="Práctica API Restful">
             </div>
             <div class="project-body">
-              <h3>Proyecto 2</h3>
-              <p>Una aplicación full-stack increíble con integración de base de datos. Incluye autenticación de usuarios y actualizaciones en tiempo real.</p>
+              <h3>Práctica API Restful</h3>
+              <p>Práctica con APIs REST usando fetch y operaciones CRUD (GET, POST, PUT, DELETE).</p>
             </div>
             <div class="project-footer">
-              <a href="#" class="project-btn">Ir al Proyecto</a>
+              <a href="https://diegodzm.github.io/api-practice/" target="_blank" class="project-btn">Ir al Proyecto</a>
             </div>
           </div>
 
@@ -97,7 +105,60 @@
             </div>
             <div class="project-body">
               <h3>Proyecto 3</h3>
-              <p>Un proyecto increíble centrado en móvil que demuestra CSS y JavaScript avanzados. Incluye animaciones y transiciones suaves.</p>
+              <p>Un proyecto móvil que demuestra CSS y JavaScript avanzados. Incluye animaciones y transiciones suaves.
+              </p>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-btn">Ir al Proyecto</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250?text=Proyecto+3" alt="Proyecto 3">
+            </div>
+            <div class="project-body">
+              <h3>Proyecto 3</h3>
+              <p>Un proyecto móvil que demuestra CSS y JavaScript avanzados. Incluye animaciones y transiciones suaves.
+              </p>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-btn">Ir al Proyecto</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250?text=Proyecto+3" alt="Proyecto 3">
+            </div>
+            <div class="project-body">
+              <h3>Proyecto 3</h3>
+              <p>Un proyecto móvil que demuestra CSS y JavaScript avanzados. Incluye animaciones y transiciones suaves.
+              </p>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-btn">Ir al Proyecto</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250?text=Proyecto+3" alt="Proyecto 3">
+            </div>
+            <div class="project-body">
+              <h3>Proyecto 3</h3>
+              <p>Un proyecto móvil que demuestra CSS y JavaScript avanzados. Incluye animaciones y transiciones suaves.
+              </p>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-btn">Ir al Proyecto</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250?text=Proyecto+3" alt="Proyecto 3">
+            </div>
+            <div class="project-body">
+              <h3>Proyecto 3</h3>
+              <p>Un proyecto móvil que demuestra CSS y JavaScript avanzados. Incluye animaciones y transiciones suaves.
+              </p>
             </div>
             <div class="project-footer">
               <a href="#" class="project-btn">Ir al Proyecto</a>
@@ -144,28 +205,28 @@
   <script src="contact-handler.js"></script>
   <script>
     // Override typing text for Spanish version
-    (function() {
-        const h1 = document.querySelector('.portfolio-title h1');
-        const p = document.querySelector('.portfolio-title p');
-        if (!h1 || !p) return;
+    (function () {
+      const h1 = document.querySelector('.portfolio-title h1');
+      const p = document.querySelector('.portfolio-title p');
+      if (!h1 || !p) return;
 
-        const h1Text = 'Diego Diaz Medina';
-        const pText = 'Portafolio de Programación';
+      const h1Text = 'Diego Diaz Medina';
+      const pText = 'Portafolio de Programación';
 
-        // Update the typing animation text
-        const originalLoop = window.loop;
-        if (originalLoop) {
-            // Modify the existing animation
-            const h1Span = h1.querySelector('.typing-text');
-            const pSpan = p.querySelector('.typing-text');
-            if (h1Span && pSpan) {
-                // Simple text replacement for now
-                setTimeout(() => {
-                    h1Span.textContent = h1Text;
-                    pSpan.textContent = pText;
-                }, 100);
-            }
+      // Update the typing animation text
+      const originalLoop = window.loop;
+      if (originalLoop) {
+        // Modify the existing animation
+        const h1Span = h1.querySelector('.typing-text');
+        const pSpan = p.querySelector('.typing-text');
+        if (h1Span && pSpan) {
+          // Simple text replacement for now
+          setTimeout(() => {
+            h1Span.textContent = h1Text;
+            pSpan.textContent = pText;
+          }, 100);
         }
+      }
     })();
   </script>
 </body>

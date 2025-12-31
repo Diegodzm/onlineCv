@@ -7,25 +7,27 @@
   <title>DdzmPortfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
-  <!-- Matrix canvas (only visible on home/portfolio) -->
   <canvas id="matrix-canvas" class="matrix-bg"></canvas>
+  <button class="nav-toggle" id="navToggle" aria-label="Open navigation" title="Open navigation">☰</button>
+  <div class="lang-container">
+    <button id="langToggle" class="lang-toggle" aria-label="Toggle language" title="Change language">
+      <span class="lang-option" data-lang="es">Español</span><span class="lang-sep"> | </span><span class="lang-option" data-lang="en">English</span>
+    </button>
+  </div>
 
-  <!-- Portfolio title section (only visible on home) -->
   <div class="portfolio-title" id="portfolio-section">
-    <button class="lang-toggle m-5" id="langToggle">Español</button>
-    <h1 classname="mt-5" >Diego Diaz Medina</h1>
-    <p classname="mt-5">Programming Portfolio<span class="typing-cursor"></span></p>
+    <h1 class="mt-5">Diego Diaz Medina</h1>
+    <p class="mt-5">Programming Portfolio<span class="typing-cursor"></span></p>
     <a class="download-cv" href="/docs/DiegoDiazM-espCV.pdf" download>Descarga CV</a>
     <a class="download-cv" href="./docs/DiegoDiazM-engCV.pdf" download>Download CV</a>
   </div>
 
-  <!-- Navigation bar -->
   <ul class="nav flex-column" id="navbar">
-    <img class="navicon" src="./docs/navicon.png" width="25" height="25" alt="">
+    <img class="navicon" src="./docs/navicon.png" width="25" height="25" alt="Menu">
     <li class="nav-item">
       <a class="nav-link" href="#" data-section="portfolio">Home</a>
     </li>
@@ -43,22 +45,20 @@
     
   </ul>
 
-  <!-- Content sections -->
   <div class="page-container">
-    <!-- About section -->
     <div class="page-section" id="about">
       <div class="section-header">
         <a href="#" class="back-btn" data-section="portfolio">← Back to Portfolio</a>
       </div>
       <div class="page-content">
         <h1>About Me</h1>
-        <p>I'm a creative developer with a passion for building beautiful and functional web applications. With
-          experience in modern web technologies and a love for innovative design, I strive to create memorable digital
-          experiences.</p>
+        <p>Full-stack programmer with studies in industrial engineering and a programming bootcamp. A self-taught
+          technology enthusiast eager to enter the world of programming. I enjoy learning new technologies and turning
+          ideas into real projects. I am responsible, proactive, team-oriented, and focused on achieving objectives.
+        </p>
       </div>
     </div>
 
-    <!-- Projects section -->
     <div class="page-section" id="projects">
       <div class="section-header">
         <a href="#" class="back-btn" data-section="portfolio">← Back to Portfolio</a>
@@ -88,15 +88,19 @@
 
           <div class="project-card">
             <div class="project-image">
-              <img src="https://via.placeholder.com/400x250?text=Project+2" alt="Project 2">
+              <img src="./docs/proyectos/restfulapi.jpg" alt="Project 2">
             </div>
             <div class="project-body">
-              <h3>Project 2</h3>
-              <p>An awesome full-stack application with database integration. Features include user authentication and
-                real-time updates.</p>
+              <h3>Restful API practice</h3>
+              <p>Jsonplaceholder practice restful api (fetch,post,put,delete)</p>
+              <ul>
+                  <li>CSS</li>
+                  <li>Html5</li>
+                  <li>JS</li>
+
             </div>
             <div class="project-footer">
-              <a href="#" class="project-btn">Go to Project</a>
+              <a href="https://diegodzm.github.io/api-practice/" target="_blank" class="project-btn">Go to Project</a>
             </div>
           </div>
 
@@ -112,12 +116,68 @@
             <div class="project-footer">
               <a href="#" class="project-btn">Go to Project</a>
             </div>
+          
+          </div>
+           <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project 3">
+            </div>
+            <div class="project-body">
+              <h3>Project 3</h3>
+              <p>An incredible mobile-first project demonstrating advanced CSS and JavaScript. Includes animations and
+                smooth transitions.</p>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-btn">Go to Project</a>
+            </div>
+          
+          </div>
+           <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project 3">
+            </div>
+            <div class="project-body">
+              <h3>Project 3</h3>
+              <p>An incredible mobile-first project demonstrating advanced CSS and JavaScript. Includes animations and
+                smooth transitions.</p>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-btn">Go to Project</a>
+            </div>
+          
+          </div>
+           <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project 3">
+            </div>
+            <div class="project-body">
+              <h3>Project 3</h3>
+              <p>An incredible mobile-first project demonstrating advanced CSS and JavaScript. Includes animations and
+                smooth transitions.</p>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-btn">Go to Project</a>
+            </div>
+          
+          </div>
+           <div class="project-card">
+            <div class="project-image">
+              <img src="https://via.placeholder.com/400x250?text=Project+3" alt="Project 3">
+            </div>
+            <div class="project-body">
+              <h3>Project 3</h3>
+              <p>An incredible mobile-first project demonstrating advanced CSS and JavaScript. Includes animations and
+                smooth transitions.</p>
+            </div>
+            <div class="project-footer">
+              <a href="#" class="project-btn">Go to Project</a>
+            </div>
+          
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Contact section -->
     <div class="page-section" id="contact">
       <div class="section-header">
         <a href="#" class="back-btn" data-section="portfolio">← Back to Portfolio</a>
@@ -149,32 +209,12 @@
     </div>
   </div>
 
-  <script src="../app.js"></script>
-  <script src="../navigation.js"></script>
-  <script src="../contact-handler.js"></script>
+  <script src="app.js"></script>
+  <script src="navigation.js"></script>
+  <script src="contact-handler.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
-
-</html>

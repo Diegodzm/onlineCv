@@ -207,6 +207,18 @@ window.addEventListener('resize', () => {
 document.addEventListener('DOMContentLoaded', function() {
     const langToggle = document.getElementById('langToggle');
     if (langToggle) {
+        // set active display based on current path
+        const esSpan = langToggle.querySelector('.lang-option[data-lang="es"]');
+        const enSpan = langToggle.querySelector('.lang-option[data-lang="en"]');
+        const currentPath = window.location.pathname;
+        if (currentPath.includes('index-es.html')) {
+            esSpan?.classList.add('lang-active');
+            enSpan?.classList.remove('lang-active');
+        } else {
+            enSpan?.classList.add('lang-active');
+            esSpan?.classList.remove('lang-active');
+        }
+
         langToggle.addEventListener('click', function() {
             const currentPath = window.location.pathname;
             if (currentPath.includes('index-es.html')) {

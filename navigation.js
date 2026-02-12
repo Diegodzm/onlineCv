@@ -3,11 +3,10 @@ function showSection(sectionId = 'portfolio') {
 
     const isPortfolio = sectionId === 'portfolio';
     const portfolio = document.getElementById('portfolio-section');
-    const matrix = document.getElementById('matrix-canvas');
+    const space = document.getElementById('space-canvas');
     const lang = document.querySelector('.lang-container');
-
     if (portfolio) portfolio.style.display = isPortfolio ? 'block' : 'none';
-    if (matrix) matrix.style.display = isPortfolio ? 'block' : 'none';
+    if (space) space.style.display = isPortfolio ? 'block' : 'none';
     if (lang) lang.style.display = isPortfolio ? 'block' : 'none';
 
     document.body.classList.toggle('light-bg', !isPortfolio);

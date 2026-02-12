@@ -1,4 +1,5 @@
-const canvas = document.getElementById('matrix-canvas');
+// Starfield animation for space background
+const canvas = document.getElementById('space-canvas');
 const ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;

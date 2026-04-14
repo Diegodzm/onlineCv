@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#1f6aa5"/>
+      <stop offset="100%" stop-color="#62a6e8"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0b3b6f"/>
+      <stop offset="100%" stop-color="#0066cc"/>
+    </linearGradient>
+  </defs>
+  <!-- body -->
+  <g transform="translate(100,100)">
+    <rect x="-18" y="-30" width="36" height="60" rx="6" ry="6" fill="url(#g1)" stroke="#083a7a" stroke-width="2"/>
+    <!-- antenna -->
+    <line x1="-2" y1="-30" x2="-2" y2="-48" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="-2" cy="-52" r="3" fill="#fff"/>
+    <!-- solar panels -->
+    <rect x="-86" y="-26" width="64" height="52" rx="4" ry="4" fill="url(#panel)" stroke="#06314e" stroke-width="2"/>
+    <rect x="22" y="-26" width="64" height="52" rx="4" ry="4" fill="url(#panel)" stroke="#06314e" stroke-width="2"/>
+    <!-- panel grid lines -->
+    <g stroke="#103a61" stroke-width="1">
+      <line x1="-70" y1="-10" x2="-22" y2="-10" />
+      <line x1="-70" y1="6" x2="-22" y2="6" />
+      <line x1="-42" y1="-26" x2="-42" y2="26" />
+      <line x1="38" y1="-10" x2="86" y2="-10" />
+      <line x1="38" y1="6" x2="86" y2="6" />
+      <line x1="70" y1="-26" x2="70" y2="26" />
+    </g>
+    <!-- highlights -->
+    <rect x="-12" y="-26" width="8" height="6" rx="2" ry="2" fill="#fff" opacity="0.12"/>
+  </g>
+</svg>

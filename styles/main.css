@@ -68,13 +68,15 @@ body.light-bg {
     border: none;
     border-radius: 6px;
     font-weight: 600;
-    cursor: pointer;
     transition: background 180ms ease, transform 120ms ease;
     box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-    z-index: 3;
-    pointer-events: auto;
-    cursor: pointer;
+
+
   
+    position: relative; /* Importante para que el z-index funcione */
+    z-index: 10000;
+    cursor: pointer !important;
+    pointer-events: auto;
 
 }
 
@@ -84,16 +86,18 @@ body.light-bg {
 }
 .lang-container {
     position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 1000; /* Un valor alto para asegurar que esté sobre todo lo demás */
-    pointer-events: auto; /* Asegura que este contenedor sí reciba clics */
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* Súbelo al máximo rango */
+    pointer-events: auto; /* Fuerza a que responda a clics */
 }
 
 
 .lang-option.lang-active {
     text-decoration: underline;
     font-weight: 700;
+    color: #4DB8FF;
+    text-shadow: 0 0 8px rgba(77, 184, 255, 0.5);
 }
 
 .lang-sep {

@@ -50,6 +50,5 @@ if (navToggle) {
         navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 }
-
 // show portfolio on load
 showSection();

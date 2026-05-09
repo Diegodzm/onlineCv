@@ -12,7 +12,7 @@
 
 <body>
   <div class="video-background">
-    <video autoplay muted loop playsinline id="bg-video" >
+    <video autoplay muted loop playsinline id="bg-video">
       <source src="./public/fondo_pantalla.mp4" type="video/mp4">
       Tu navegador no soporta videos de fondo.
     </video>
@@ -27,24 +27,24 @@
 
   <div class="portfolio-title" id="portfolio-section">
     <h1 class="mt-5">Diego Diaz Medina</h1>
-    <p class="mt-5">Programming Portfolio<span class="typing-cursor"></span></p>
-    <a class="download-cv" href="docs/DiegoDiazM-espCV.pdf" download>Descarga CV</a>
-    <a class="download-cv" href="docs/DiegoDiazM-engCV.pdf" download>Download CV</a>
+    <p class="mt-5"><span data-translate="subtitle">Programming Portfolio</span><span class="typing-cursor"></span></p>
+    <a class="download-cv" href="docs/DiegoDiazM-espCV.pdf" download data-translate="download-cv-es">Download CV</a>
+    <a class="download-cv" href="docs/DiegoDiazM-engCV.pdf" download data-translate="download-cv-en">Download CV</a>
   </div>
 
   <ul class="nav flex-column" id="navbar">
     <img class="navicon" src="./docs/navicon.png" width="25" height="25" alt="Menu">
     <li class="nav-item">
-      <a class="nav-link" href="#" data-section="portfolio">Home</a>
+      <a class="nav-link" href="#" data-section="portfolio" data-translate="nav-home">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-section="about">About</a>
+      <a class="nav-link" href="#" data-section="about" data-translate="nav-about">About</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-section="projects">Projects</a>
+      <a class="nav-link" href="#" data-section="projects" data-translate="nav-projects">Projects</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" data-section="contact">Contact</a>
+      <a class="nav-link" href="#" data-section="contact" data-translate="nav-contact">Contact</a>
     </li>
     <li class="nav-item">
     </li>
@@ -54,31 +54,34 @@
   <div class="page-container">
     <div class="page-section" id="about">
       <div class="section-header">
-        <a href="#" class="back-btn" data-section="portfolio">← Back to Portfolio</a>
+        <a href="#" class="back-btn" data-section="portfolio" data-translate="back-to-portfolio">← Back to Portfolio</a>
       </div>
       <div class="page-content">
-        <h1>About Me</h1>
-        <p>Full-stack programmer with studies in engineering and a programming bootcamp. A self-taught
-          technology enthusiast eager to enter the world of programming. I enjoy learning new technologies and turning
-          ideas into real projects. I am responsible, proactive, team-oriented, and focused on achieving objectives.
-        </p>
+        <h1 data-translate="about-title">About Me</h1>
+        <p>Full-stack developer with a background in engineering and specialized full-stack programming certifications.
+          I am a technology enthusiast and a self-taught learner, driven by a strong desire to keep evolving and growing
+          within the software development field.
+          I enjoy implementing new technologies and transforming ideas into functional, real-world projects.<br><br>
+
+          I am responsible, proactive, team-oriented, and focused on achieving goals.
+          Currently open to new professional opportunities.</p>
       </div>
     </div>
 
     <div class="page-section" id="projects">
       <div class="section-header">
-        <a href="#" class="back-btn" data-section="portfolio">← Back to Portfolio</a>
+        <a href="#" class="back-btn" data-section="portfolio" data-translate="back-to-portfolio">← Back to Portfolio</a>
       </div>
       <div class="page-content">
-        <h1>Projects</h1>
+        <h1 data-translate="projects-title">Projects</h1>
         <div class="projects-grid">
           <div class="project-card">
             <div class="project-image">
               <img src="./docs/proyectos/reactlanding.jpg" alt="Project 3">
             </div>
             <div class="project-body">
-              <h3>React LandingPage </h3>
-              <p>Basic React JS landing page, repository for useful react code.
+              <h3 data-translate="react-landing-title">React LandingPage</h3>
+              <p data-translate="react-landing-desc">Basic React JS landing page, repository for useful react code.
                 right now working in implementing different apis and backend functionality.
               </p>
               <ul>
@@ -90,8 +93,8 @@
               </ul>
             </div>
             <div class="project-footer">
-              <a href="https://diegodzm.github.io/landingpagereact/" target="_blank" class="project-btn">Go to
-                Project</a>
+              <a href="https://diegodzm.github.io/landingpagereact/" target="_blank" class="project-btn"
+                data-translate="go-to-project">Go to Project</a>
             </div>
           </div>
 
@@ -100,8 +103,8 @@
               <img src="./docs/proyectos/ecomerce.jpg" alt="Project 3">
             </div>
             <div class="project-body">
-              <h3>Ecomerce template</h3>
-              <p>ecomerce basic web page with cart functionality </p>
+              <h3 data-translate="ecommerce-title">Ecomerce template</h3>
+              <p data-translate="ecommerce-desc">ecomerce basic web page with cart functionality</p>
               <ul>
                 <li>CSS</li>
                 <li>Html5</li>
@@ -109,8 +112,8 @@
               </ul>
             </div>
             <div class="project-footer">
-              <a href="https://diegodzm.github.io/ecomercetemplate/" target="_blank" class="project-btn">Go to
-                Project</a>
+              <a href="https://diegodzm.github.io/ecomercetemplate/" target="_blank" class="project-btn"
+                data-translate="go-to-project">Go to Project</a>
             </div>
           </div>
 
@@ -127,29 +130,29 @@
 
   <div class="page-section" id="contact">
     <div class="section-header">
-      <a href="#" class="back-btn" data-section="portfolio">← Back to Portfolio</a>
+      <a href="#" class="back-btn" data-section="portfolio" data-translate="back-to-portfolio">← Back to Portfolio</a>
     </div>
     <div class="page-content">
-      <h1>Contact Me</h1>
-      <p>Get in touch! I'd love to hear from you.</p>
+      <h1 data-translate="contact-title">Contact Me</h1>
+      <p data-translate="contact-desc">Get in touch! I'd love to hear from you.</p>
 
       <form id="contactForm" class="contact-form" method="POST">
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
+          <label for="name" data-translate="form-name">Name</label>
+          <input type="text" id="name" name="name" data-placeholder="form-name" required>
         </div>
 
         <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+          <label for="email" data-translate="form-email">Email</label>
+          <input type="email" id="email" name="email" data-placeholder="form-email" required>
         </div>
 
         <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
+          <label for="message" data-translate="form-message">Message</label>
+          <textarea id="message" name="message" rows="6" data-placeholder="form-message" required></textarea>
         </div>
 
-        <button type="submit" class="submit-btn">Send Message</button>
+        <button type="submit" class="submit-btn" data-translate="form-submit">Send Message</button>
         <div id="formMessage" class="form-message"></div>
       </form>
     </div>
